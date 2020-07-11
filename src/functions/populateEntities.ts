@@ -12,11 +12,11 @@ export const populateEntities = async (entities: string) => {
 
   const db = client.database(databaseName || "");
 
-  const usersCollection = db.collection(entities);
+  const entitiesCollection = db.collection(entities);
 
-  const users: unknown = await readJson(`./data/${entities}.json`);
+  const entitiesList: unknown = await readJson(`./data/${entities}.json`);
 
-  const insertIds = await usersCollection.insertMany(users as Object[]);
+  const insertIds = await entitiesCollection.insertMany(entitiesList as Object[]);
 
   return insertIds;
 };
