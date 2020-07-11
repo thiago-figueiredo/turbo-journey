@@ -4,5 +4,4 @@ const password = Deno.env.get("DB_PASSWORD");
 const protocol = Deno.env.get("DB_PROTOCOL");
 const user = Deno.env.get("DB_USER");
 
-export const url = `${protocol}//${user}:${password}@${hostname}/${name}`
-
+export const url = `${protocol}//${user}:${password}@${hostname}/${name}`;
