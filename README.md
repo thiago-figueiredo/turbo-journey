@@ -35,4 +35,8 @@ npx degit https://github.com/thiago-figueiredo/turbo-journey.git
 deno install -n tj ./src/main.ts
 ```
 
-BUT, you'll need to add a .env file full of secrets file to make it work. =)
+Set the base URL for requests:
+
+```
+export BASE_URL=https://api-stage.twiagemed.net
+```

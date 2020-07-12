@@ -7,7 +7,15 @@ export const setToken = async (token?: string) => {
     return "Token saved.";
   }
 
-  const string = await readFileStr("./data/token", { encoding: "utf8" });
+  try {
+    const string = await readFileStr("./data/token", { encoding: "utf8" });
 
-  return string;
+    return string;
+  } catch (error) {
+    console.error(error);
+
+    console.log("Did you forget to set the token?");
+
+    Deno.exit();
+  }
 };

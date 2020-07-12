@@ -1,4 +1,5 @@
 import "https://deno.land/x/dotenv/load.ts";
+import {ensureDirSync} from "https://deno.land/std/fs/mod.ts";
 
 import { cac } from "https://unpkg.com/cac/mod.js";
 
@@ -6,6 +7,8 @@ import { deleteEntities } from "./functions/deleteEntities.ts";
 import { fetchEntities } from "./functions/fetchEntities.ts";
 import { populateEntities } from "./functions/populateEntities.ts";
 import { setToken } from "./functions/setToken.ts";
+
+ensureDirSync("./data");
 
 const cli = cac("tj");
 
