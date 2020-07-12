@@ -12,9 +12,15 @@ export const makeGenericLoadEntities = ({
       headers: makeGenericRequestHeaders(),
     });
 
-    const entities = await response.json();
+    try {
+      const entities = await response.json();
 
-    return entities;
+      return entities;
+    } catch (error) {
+      console.error(error);
+
+      console.log(response.statusText);
+    }
   };
 
   return loadEntities;
