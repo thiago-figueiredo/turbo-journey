@@ -1,16 +1,24 @@
 # turbo-journey
-Delete! Delete everything!
 
-## Deleting Users
+```
+tj v1.0.0
 
-deno run --allow-net delete.ts [regexp] [DRY?] [token]
+Usage:
+  $ tj <command> [options]
 
-### Dry Run
+Commands:
+  token [token]                          Set/show authentication token
+  fetch <entities>                       Fetch entities and save as JSON
+  populate <entities>                    Populate database with entities saved as JSON
+  delete <entities> <property> <regexp>  Delete entities when property matches regexp
 
-deno run --allow-net delete.ts a\\\\.\\\d+@ DRY abc123
+For more info, run any command with the `--help` flag:
+  $ tj token --help
+  $ tj fetch --help
+  $ tj populate --help
+  $ tj delete --help
 
-deno run --allow-net delete.ts user\\.test\\.\\d+@ DRY abc123
-
-### For realsies
-
-deno run --allow-net delete.ts user\\.test\\.\\d+@ abc123
+Options:
+  -h, --help     Display this message 
+  -v, --version  Display version number 
+```
