@@ -22,3 +22,17 @@ Options:
   -h, --help     Display this message 
   -v, --version  Display version number 
 ```
+
+## Install using deno install
+
+```
+mkdir tj
+
+cd tj
+
+npx degit https://github.com/thiago-figueiredo/turbo-journey.git
+ 
+deno install -n tj ./src/main.ts
+```
+
+BUT, you'll need to add a .env file full of secrets file to make it work. =)
