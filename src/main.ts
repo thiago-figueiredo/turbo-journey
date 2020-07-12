@@ -55,12 +55,13 @@ cli
     "Delete entities when property matches regexp",
     {}
   )
-  .action(async (entities: string, property: string, regexp: string) => {
-    const result = await deleteEntities(entities, property, regexp);
+  .option("-x, --execute", "Actually delete, for safety reasons :)", {})
+  .action(async (entities: string, property: string, regexp: string, options: Record<string, any>) => {
+    const result = await deleteEntities(entities, property, regexp, options);
 
     console.log(result);
   });
 
 cli.help(() => {});
-cli.version("0.0.0");
+cli.version("1.0.0");
 cli.parse();
