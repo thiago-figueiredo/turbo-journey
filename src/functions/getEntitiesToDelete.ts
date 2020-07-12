@@ -6,7 +6,7 @@ export const getEntitiesToDelete = async (
   entities: string,
   entitiesToDeleteMapper: Function,
   property: string,
-  regexp: string
+  regexp: string,
 ) => {
   try {
     const entitiesList: any = await readJson(`${dataDir}/${entities}.json`);

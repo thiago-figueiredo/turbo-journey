@@ -10,7 +10,7 @@ export const deleteEntities = async (
   entities: string,
   property: string,
   regexp: string,
-  options: Record<string, any>
+  options: Record<string, any>,
 ) => {
   // But trucks are different...
   const entitiesToDelete = await getEntitiesToDelete(
@@ -19,7 +19,7 @@ export const deleteEntities = async (
       ? makeEntitiesToDeleteMapper(property)
       : makeTrucksToDeleteMapper(property),
     property,
-    regexp
+    regexp,
   );
 
   console.log(`Entities to delete count: ${entitiesToDelete.length}`);
@@ -39,7 +39,7 @@ export const deleteEntities = async (
         console.log(
           String(++i).padStart(paddingLength, "0"),
           response.statusText,
-          id
+          id,
         );
       }
     } else {

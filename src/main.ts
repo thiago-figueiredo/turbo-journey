@@ -45,7 +45,7 @@ cli
   .command(
     "populate <entities>",
     "Populate database with entities saved as JSON",
-    {}
+    {},
   )
   .action(async (entities: string) => {
     const result = await populateEntities(entities);
@@ -57,7 +57,7 @@ cli
   .command(
     "delete <entities> <property> <regexp>",
     "Delete entities when property matches regexp",
-    {}
+    {},
   )
   .option("-x, --execute", "Actually delete, for safety reasons :)", {})
   .action(
@@ -65,12 +65,12 @@ cli
       entities: string,
       property: string,
       regexp: string,
-      options: Record<string, any>
+      options: Record<string, any>,
     ) => {
       const result = await deleteEntities(entities, property, regexp, options);
 
       console.log(result);
-    }
+    },
   );
 
 cli.help(() => {});

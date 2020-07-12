@@ -18,7 +18,7 @@ export const populateEntities = async (entities: string) => {
   const entitiesList: unknown = await readJson(`${dataDir}/${entities}.json`);
 
   const insertIds = await entitiesCollection.insertMany(
-    entitiesList as Object[]
+    entitiesList as Object[],
   );
 
   return insertIds;

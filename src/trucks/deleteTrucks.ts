@@ -26,14 +26,14 @@ export const deleteTrucks = async (root: string, trucksToDelete: Truck[]) => {
       {
         headers: makeGenericRequestHeaders(),
         method: "DELETE",
-      }
+      },
     );
 
     console.log(
       String(++i).padStart(paddingLength, "0"),
       response.statusText,
       emsAgencyID,
-      truckID
+      truckID,
     );
   }
 };
