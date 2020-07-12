@@ -1,10 +1,8 @@
-import { readFileStrSync } from "https://deno.land/std/fs/mod.ts";
+import { setToken as getToken } from "./setToken.ts";
 
 export const makeGenericRequestHeaders = () => {
   const headers = {
-    authorization: `JWT ${readFileStrSync("./data/token", {
-      encoding: "utf8",
-    })}`,
+    authorization: `JWT ${getToken()}`,
     "Content-Type": "application/json",
   };
 

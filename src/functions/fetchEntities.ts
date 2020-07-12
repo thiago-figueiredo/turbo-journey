@@ -1,5 +1,6 @@
 import { writeJson } from "https://deno.land/std/fs/mod.ts";
 
+import { dataDir } from "../config/dataDir.ts";
 import { makeGenericLoadEntities } from "./makeGenericLoadEntities.ts";
 
 const root = Deno.env.get("BASE_URL") || "http://localhost";
@@ -12,7 +13,7 @@ export const fetchEntities = async (entities: string) => {
 
   const object = await loadEntities();
 
-  await writeJson(`./data/${entities}.json`, object);
+  await writeJson(`${dataDir}/${entities}.json`, object);
 
-  return `./data/${entities}.json saved.`;
+  return `${dataDir}/${entities}.json saved.`;
 };
