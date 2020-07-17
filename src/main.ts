@@ -1,5 +1,5 @@
-import "https://deno.land/x/dotenv/load.ts";
 import { ensureDirSync } from "https://deno.land/std/fs/mod.ts";
+import "https://deno.land/x/dotenv/load.ts";
 
 import { cac } from "https://unpkg.com/cac/mod.js";
 
@@ -59,6 +59,7 @@ cli
     "Delete entities when property matches regexp",
     {},
   )
+  .option("-s, --show", "Show matched entities", {})
   .option("-x, --execute", "Actually delete, for safety reasons :)", {})
   .action(
     async (

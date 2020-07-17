@@ -24,6 +24,10 @@ export const deleteEntities = async (
 
   console.log(`Entities to delete count: ${entitiesToDelete.length}`);
 
+  if (options.show) {
+    console.log(entitiesToDelete);
+  }
+
   if (options.execute) {
     console.log("Deleting...");
 

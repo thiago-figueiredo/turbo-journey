@@ -32,7 +32,7 @@ cd tj
 
 npx degit https://github.com/thiago-figueiredo/turbo-journey.git
  
-deno install -n tj ./src/main.ts
+deno install -n tj -f --allow-env --allow-net --allow-plugin --allow-read --allow-write --quiet --unstable ./src/main.ts
 ```
 
 Set the base URL for requests:
